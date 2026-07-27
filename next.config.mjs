@@ -1,3 +1,6 @@
+import { fileURLToPath } from 'node:url'
+import path from 'node:path'
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
@@ -5,6 +8,9 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+  },
+  turbopack: {
+    root: path.dirname(fileURLToPath(import.meta.url)),
   },
 }
 
